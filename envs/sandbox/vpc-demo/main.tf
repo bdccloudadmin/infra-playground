@@ -7,8 +7,8 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "mycompany-tfstate-sandbox-123456789012"  # your existing tfstate bucket
-    key          = "vpc-demo/terraform.tfstate"              # separate state file for this project
+    bucket       = "mycompany-tfstate-sandbox-123456789012" # your existing tfstate bucket
+    key          = "vpc-demo/terraform.tfstate"             # separate state file for this project
     region       = "eu-west-1"
     profile      = "sandbox"
     encrypt      = true
@@ -144,7 +144,7 @@ output "vpc_id" {
 
 output "public_subnet_ids" {
   description = "IDs of the public subnets"
-  value       = [
+  value = [
     aws_subnet.public_a.id,
     aws_subnet.public_b.id,
   ]
@@ -152,7 +152,7 @@ output "public_subnet_ids" {
 
 output "private_subnet_ids" {
   description = "IDs of the private subnets"
-  value       = [
+  value = [
     aws_subnet.private_a.id,
     aws_subnet.private_b.id,
   ]
